@@ -1,0 +1,17 @@
+{% extends 'basic_app/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+  {% if registered %}  <!-- Template tagging for boolean registered -->
+    <h2>Thank you for registering!</h2>
+    {% else %}
+      <h2>Register Here!</h2>
+      <h2>Fill Out the form now!</h2>
+      <form enctype="multipart/form-data" method="post"> <!-- "multipart/form-data" for multimedia files -->
+          {% csrf_token %}   <!-- Enabling csrf token for registration form -->
+        {{ user_form.as_p }}  <!-- Template tagging for user form  -->
+        {{ profile_form.as_p }}  <!-- Template tagging for profile form -->
+        <input type="submit" class="btn btn-primary" value="Register">
+      </form>
+  {% endif %}
+{% endblock %}
