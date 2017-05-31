@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class='navbar navbar-default navbar-static-top navbar-inverse'>
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="#" class="navbar-brand" href="{% url 'index' %}">ATP Cloud</a></li>
+          <li><a href="{% url 'admin:index' %}" class="navbar-link">Admin</a></li>
+          <!-- <li><a href="{% url 'myapp:register' %}">SAAS</a></li> -->
+          <li><a href="{% url 'myapp:staas' %}">STAAS</a></li>
+          <li><a href="{% url 'myapp:saas' %}">SAAS</a></li>
+          <li><a href="{% url 'myapp:iaas' %}">IAAS</a></li>
+          <!-- <li><a href="{% url 'myapp:register' %}">IAAS</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'myapp:register' %}" class="navbar-link">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      {% block body_block %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

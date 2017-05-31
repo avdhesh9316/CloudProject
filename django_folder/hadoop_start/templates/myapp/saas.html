@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% block body_block %}
+    <div class="container">
+      <div class="jumbotron">
+        <form action="" method="post">
+        <h3>Fill out the form!</h3>
+        <div class="form-group">
+          {{ form.as_p }}
+          {% csrf_token %}
+        </div>
+          <center><input type="submit" class="btn btn-primary" value="submit"/></center>
+        </form>
+      </div>
+{% endblock %}
